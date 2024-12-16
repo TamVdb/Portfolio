@@ -1,62 +1,58 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Link, useLocation } from 'react-router-dom';
+import { motion } from "framer-motion";
 import { CiMenuFries } from "react-icons/ci";
 
 const links = [
-   {
-      name: "home",
-      path: "/",
-   },
-   {
-      name: "services",
-      path: "/services",
-   },
-   {
-      name: "resume",
-      path: "/resume",
-   },
-   {
-      name: "work",
-      path: "/work",
-   },
-   {
-      name: "contact",
-      path: "/contact",
-   },
+   { name: "welcome", id: "welcome" },
+   { name: "services", id: "services" },
+   { name: "resume", id: "resume" },
+   { name: "work", id: "work" },
+   { name: "contact", id: "contact" },
 ];
 
 const MobileNav = () => {
-   const location = useLocation(); // Utilisation de useLocation pour obtenir le chemin actuel
+   const handleScroll = (id, closeMenu) => {
+      const section = document.getElementById(id);
+      if (section) {
+         section.scrollIntoView({ behavior: "smooth" });
+      }
+
+      closeMenu();
+   };
 
    return (
       <Sheet>
+         {/* Bouton d'ouverture du menu */}
          <SheetTrigger className="flex justify-center items-center">
             <CiMenuFries className="text-[32px] text-accent" />
          </SheetTrigger>
+
+         {/* Contenu du menu */}
          <SheetContent className="flex flex-col">
             {/* Logo */}
             <div className="mt-32 mb-40 text-center text-2xl">
-               <Link to="/"> {/* Remplacement de href par to */}
+               <motion.button
+                  onClick={() => handleScroll("welcome")}
+                  whileTap={{ scale: 0.9 }}
+               >
                   <h1 className="text-4xl font-semibold">
-                     Luke<span className="text-accent">.</span>
+                     Tamara<span className="text-accent">.</span>
                   </h1>
-               </Link>
+               </motion.button>
             </div>
+
             {/* Navigation */}
             <nav className="flex flex-col justify-center items-center gap-8">
-               {links.map((link, index) => {
-                  return (
-                     <Link
-                        to={link.path} // Remplacement de href par to
-                        key={index}
-                        className={`${link.path === location.pathname &&
-                           "text-accent border-b-2 border-accent"
-                           } text-xl capitalize hover:text-accent transition-all`}
-                     >
-                        {link.name}
-                     </Link>
-                  );
-               })}
+               {links.map((link) => (
+                  <motion.button
+                     key={link.id}
+                     onClick={() => handleScroll(link.id, closeMenu)}
+                     className="text-xl capitalize hover:text-accent transition-all"
+                     whileTap={{ scale: 0.9 }}
+                  >
+                     {link.name}
+                  </motion.button>
+               ))}
             </nav>
          </SheetContent>
       </Sheet>

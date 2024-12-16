@@ -6,11 +6,24 @@ import Nav from '../Nav/Nav';
 import MobileNav from '../MobileNav/MobileNav';
 
 const Header = () => {
+
+   const handleScrollToTop = () => {
+      const backToTop = document.getElementById('welcome');
+      const headerHeight = document.querySelector("header").offsetHeight;
+
+      if (backToTop) {
+         window.scrollTo({
+            top: backToTop.offsetTop - headerHeight,
+            behavior: "smooth",
+         });
+      }
+   };
+
    return (
-      <header className="py-8 xl:py-12 text-white">
+      <header className="py-8 xl:py-12 text-white xl:sticky xl:top-0 xl:z-50">
          <div className="container mx-auto flex justify-between items-center">
             {/* logo */}
-            <Link to="/">
+            <Link to="/" onClick={handleScrollToTop}>
                <h1 className="text-4xl font-semibold">
                   Tamara<span className="text-accent">.</span>
                </h1>

@@ -7,6 +7,7 @@
 
 :root {
   --font-jetbrainsMono: 'JetBrains Mono', monospace;
+  --radius: 0.5rem;
 }
 
 @tailwind base;
@@ -33,7 +34,9 @@
    .text-outline-hover {
       -webkit-text-stroke: 1px #00ff99;
    }
-   :root {
-      --radius: 0.5rem;
-   }
+
+   .section-height {
+   height: calc(100vh - 104px); /* Ajuste 80px à la hauteur de ton menu sticky */
+   overflow: hidden;
+}
 }
