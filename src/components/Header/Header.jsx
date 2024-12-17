@@ -20,7 +20,7 @@ const Header = () => {
    };
 
    return (
-      <header className="py-8 xl:py-12 text-white xl:sticky xl:top-0 xl:z-50">
+      <header className="bg-primary py-8 xl:py-12 text-white xl:sticky xl:top-0 xl:z-50">
          <div className="container mx-auto flex justify-between items-center">
             {/* logo */}
             <Link to="/" onClick={handleScrollToTop}>
