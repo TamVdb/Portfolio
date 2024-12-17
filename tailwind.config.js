@@ -6,13 +6,16 @@ module.exports = {
    theme: {
       container: {
          center: true,
-         padding: '1rem',
+         padding: {
+            DEFAULT: '1.5rem',
+            sm: '1rem',
+         }
       },
       screens: {
          sm: '640px',
          md: '768px',
          lg: '960px',
-         xl: '1200px'
+         xl: '1280px'
       },
       fontFamily: {
          primary: 'var(--font-jetbrainsMono)'
