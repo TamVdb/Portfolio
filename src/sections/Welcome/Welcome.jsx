@@ -17,7 +17,7 @@ const Welcome = () => {
                   <h1 className="h1 text-accent mb-6">
                      Tamara <span className="text-5xl">Vandebroeck</span>
                   </h1>
-                  <p className="max-w-[550px] mb-9 text-white/80">
+                  <p className="max-w-[550px] mb-9 text-white/90">
                      J'aime coder des trucs pour le web ! Mon objectif est de
                      créer des applications web attrayantes, inspirantes et optimisées au pixel près.
                   </p>
