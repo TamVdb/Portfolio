@@ -39,7 +39,7 @@ const Services = () => {
                   opacity: 1,
                   transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
                }}
-               className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+               className="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-16"
             >
                {services.map((service, index) => {
                   return (
@@ -59,12 +59,15 @@ const Services = () => {
                               <BsArrowDownRight className="text-primary text-3xl" />
                            </Link>
                         </div>
+
                         {/* title */}
-                        <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                        <h2 className="text-4xl xl:text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
                            {service.title}
                         </h2>
+
                         {/* description */}
                         <p className="text-white/60">{service.description}</p>
+
                         {/* border */}
                         <div className="border-b border-white/20 w-full"></div>
                      </div>
