@@ -35,9 +35,4 @@
    .text-outline-hover {
       -webkit-text-stroke: 1px #00ff99;
    }
-
-   .section-height {
-      height: calc(100vh - 104px); /* Ajuste 80px à la hauteur de ton menu sticky */
-      overflow: hidden;
-   }
 }

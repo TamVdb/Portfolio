@@ -10,6 +10,7 @@ const Welcome = () => {
       <>
          <div className="container mx-auto">
             <div className="flex flex-col xl:flex-row items-center justify-between py-8 xl:py-16">
+
                {/* text */}
                <div className="text-center xl:text-left order-2 xl:order-none">
                   <span className="text-xl">Front-End Developer</span>
@@ -21,6 +22,7 @@ const Welcome = () => {
                      J'aime coder des trucs pour le web ! Mon objectif est de
                      créer des applications web attrayantes, inspirantes et optimisées au pixel près.
                   </p>
+
                   {/* btn and socials */}
                   <div className="flex flex-col xl:flex-row items-center gap-8">
                      <Button
@@ -31,13 +33,11 @@ const Welcome = () => {
                         <FiDownload className="text-xl" />
                      </Button>
                      <div className="mb-8 xl:mb-0">
-                        <Social
-                           containerStyles="flex gap-6"
-                           iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
-                        />
+                        <Social />
                      </div>
                   </div>
                </div>
+
                {/* photo */}
                <div className="order-1 xl:order-none mb-8 xl:mb-0">
                   <Photo />

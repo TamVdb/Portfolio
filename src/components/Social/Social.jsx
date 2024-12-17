@@ -7,9 +7,9 @@ const socials = [
    { icon: <BsGlobe />, path: "https://www.zestcitron.be/" },
 ];
 
-const Social = ({ containerStyles, iconStyles }) => {
+const Social = () => {
    return (
-      <div className={containerStyles}>
+      <div className="flex gap-6">
          {socials.map((item, index) => {
             return (
                <a
@@ -17,7 +17,7 @@ const Social = ({ containerStyles, iconStyles }) => {
                   href={item.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={iconStyles}
+                  className="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
                >
                   {item.icon}
                </a>
