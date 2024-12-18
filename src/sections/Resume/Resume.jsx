@@ -114,7 +114,7 @@ const skills = {
       },
       {
          icon: <FaNodeJs />,
-         name: "node.js",
+         name: "Node.js",
       },
       {
          icon: <SiRedux />,
@@ -142,7 +142,7 @@ const skills = {
       },
       {
          icon: <SiTailwindcss />,
-         name: "Tailwind",
+         name: "Tailwind.css",
       },
       {
          icon: <SiBootstrap />,
@@ -181,6 +181,7 @@ const Resume = () => {
    return (
       <div className="container mx-auto">
          <div className="flex flex-col justify-center py-8 xl:py-16">
+            <h2 className="mx-auto lg:mx-0 mb-12 text-xl bg-accent text-primary w-fit rounded py-2 px-4">À propos</h2>
             <motion.div
                initial={{ opacity: 0 }}
                animate={{
@@ -216,7 +217,7 @@ const Resume = () => {
                                  {experience.items.map((item, index) => {
                                     return (
                                        <li key={index}
-                                          className="bg-[#23262e] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                                          className="bg-[#23262e] h-[184px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                                        >
                                           <span className="text-accent">{item.duration}</span>
                                           <p className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
