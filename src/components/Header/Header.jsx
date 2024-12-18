@@ -24,9 +24,7 @@ const Header = () => {
          <div className="container mx-auto flex justify-between items-center">
             {/* logo */}
             <Link to="/" onClick={handleScrollToTop}>
-               <h1 className="text-4xl font-semibold">
-                  Tamara<span className="text-accent">.</span>
-               </h1>
+               <h1>Tamara<span className="text-accent">.</span></h1>
             </Link>
 
             {/* desktop nav & hire me button */}
