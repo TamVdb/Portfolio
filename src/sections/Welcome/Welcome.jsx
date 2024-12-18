@@ -14,10 +14,9 @@ const Welcome = () => {
                {/* text */}
                <div className="text-center xl:text-left order-2 xl:order-none">
                   <span className="text-xl">Front-End Developer</span>
-                  <p className="text-6xl">Je suis</p>
-                  <h1 className="h1 text-accent mb-6">
-                     Tamara <span className="text-5xl">Vandebroeck</span>
-                  </h1>
+                  <h2 className="main-title mb-6">
+                     Hello, je suis <br /> <span className="text-accent">Tamara</span>
+                  </h2>
                   <p className="max-w-[550px] mb-9 text-white/90">
                      J'aime coder des trucs pour le web ! Mon objectif est de
                      créer des applications web attrayantes, inspirantes et optimisées au pixel près.
