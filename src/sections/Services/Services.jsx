@@ -33,6 +33,7 @@ const Services = () => {
    return (
       <div className="container mx-auto">
          <div className="flex flex-col justify-center py-8 xl:py-16">
+            <h2 className="mx-auto lg:mx-0 mb-12 text-xl bg-accent text-primary w-fit rounded py-2 px-4">Services</h2>
             <motion.div
                initial={{ opacity: 0 }}
                animate={{
@@ -60,9 +61,9 @@ const Services = () => {
                         </div>
 
                         {/* title */}
-                        <h2 className="text-4xl xl:text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                        <h3 className=" group-hover:text-accent transition-all duration-500">
                            {service.title}
-                        </h2>
+                        </h3>
 
                         {/* description */}
                         <p className="text-white/80">{service.description}</p>
