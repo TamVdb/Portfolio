@@ -6,7 +6,7 @@ const services = [
    {
       num: "01",
       title: "Web Development",
-      description: "Développement d'applications web interactives et de sites sur mesure.",
+      description: "Développement d'applications web et de sites sur mesure.",
       href: "https://www.zestcitron.be/#services",
    },
    {
@@ -43,8 +43,7 @@ const Services = () => {
             >
                {services.map((service, index) => {
                   return (
-                     <div
-                        key={index}
+                     <div key={index}
                         className="flex-1 flex flex-col justify-center gap-6 group"
                      >
                         {/* top */}
