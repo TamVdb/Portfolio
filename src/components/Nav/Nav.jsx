@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const links = [
    { name: "welcome", id: "welcome" },
    { name: "services", id: "services" },
-   { name: "resume", id: "resume" },
-   { name: "work", id: "work" },
+   { name: "à propos", id: "resume" },
+   { name: "projets", id: "work" },
 ];
 
 const Nav = () => {

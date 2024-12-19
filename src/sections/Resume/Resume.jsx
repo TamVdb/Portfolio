@@ -180,8 +180,8 @@ import { motion } from "framer-motion";
 const Resume = () => {
    return (
       <div className="container mx-auto">
-         <div className="flex flex-col justify-center py-8 xl:py-16">
-            <h2 className="mx-auto lg:mx-0 mb-12 text-xl bg-accent text-primary w-fit rounded py-2 px-4">À propos</h2>
+         <div className="flex flex-col justify-center py-8 xl:py-14">
+            <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-[#23262e] w-fit rounded py-1 px-3">À propos</h2>
             <motion.div
                initial={{ opacity: 0 }}
                animate={{
@@ -210,7 +210,7 @@ const Resume = () => {
                         <div className="flex flex-col gap-6">
 
                            {/* Title */}
-                           <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{experience.title}</h3>
+                           <h3 className="text-center xl:text-left">{experience.title}</h3>
 
                            <ScrollArea className="h-[400px]">
                               <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -305,7 +305,7 @@ const Resume = () => {
 
                            {/* Title */}
                            <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{about.title}</h3>
-                           <p className="max-w-[600px] text-white/90 mx-auto xl:mx-0">
+                           <p className=" text-white/90 mx-auto xl:mx-0">
                               {about.description}
                            </p>
                            <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">

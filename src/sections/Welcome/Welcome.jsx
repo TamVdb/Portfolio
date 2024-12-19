@@ -9,7 +9,7 @@ const Welcome = () => {
    return (
       <>
          <div className="container mx-auto">
-            <div className="flex flex-col xl:flex-row items-center justify-between py-8 xl:py-16">
+            <div className="flex flex-col xl:flex-row items-center justify-between py-8 xl:py-14">
 
                {/* text */}
                <div className="text-center xl:text-left order-2 xl:order-none">
