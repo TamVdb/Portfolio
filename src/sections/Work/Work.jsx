@@ -27,7 +27,7 @@ const projects = [
       title: "Shake'n Taste",
       description: "Utilisation d'une API pour afficher des coktails. Mode sombre/clair en JavaScript qui correspond aux préférences utilisateur. Une page 'Lab' pour tester l'idée de créer son propre cocktail. Création du logo avec Illustrator et Photoshop.",
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-      image: "/assets/work/shake-and-taste.jpg",
+      image: "/assets/work/shake-n-taste.jpg",
       live: "https://shake-n-taste.vercel.app/index.html",
       github: "https://github.com/TamVdb/itf3_Project_Shake_and_Taste",
    },

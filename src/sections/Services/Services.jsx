@@ -52,12 +52,9 @@ const Services = () => {
                            <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                               {service.num}
                            </div>
-                           <Link
-                              to={service.href}
-                              className="w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
-                           >
+                           <a href={service.href} target="_blank" className="w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45">
                               <BsArrowDownRight className="text-primary text-3xl" />
-                           </Link>
+                           </a>
                         </div>
 
                         {/* title */}

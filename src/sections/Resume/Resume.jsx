@@ -249,7 +249,7 @@ const Resume = () => {
                                  {education.items.map((item, index) => {
                                     return (
                                        <li key={index}
-                                          className="bg-[#23262e] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                                          className="bg-[#23262e] h-[184px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                                        >
                                           <span className="text-accent">{item.duration}</span>
                                           <p className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
