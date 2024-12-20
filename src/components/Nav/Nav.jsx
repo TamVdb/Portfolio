@@ -9,9 +9,10 @@ const links = [
 ];
 
 const Nav = () => {
+
    const [activeSection, setActiveSection] = useState('');
 
-   // Observer pour mettre à jour la section active
+   // Use the IntersectionObserver API to check if a section is in the viewport
    useEffect(() => {
       const observer = new IntersectionObserver(
          (entries) => {
@@ -21,21 +22,21 @@ const Nav = () => {
                }
             });
          },
-         { threshold: 0.5 } // Section visible à 50%
+         { threshold: 0.5 } // Visible at 50%
       );
 
-      // Observer chaque section
+      // Observe each section
       links.forEach((link) => {
          const section = document.getElementById(link.id);
          if (section) observer.observe(section);
       });
 
-      return () => observer.disconnect(); // Nettoyer à la fin
+      return () => observer.disconnect(); // Cleanup
    }, []);
 
    const handleScroll = (id) => {
       const section = document.getElementById(id);
-      const headerHeight = document.querySelector("header").offsetHeight; // Hauteur du menu sticky
+      const headerHeight = document.querySelector("header").offsetHeight; // Height of the header
       if (section) {
          window.scrollTo({
             top: section.offsetTop - headerHeight,
