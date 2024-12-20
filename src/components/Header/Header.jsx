@@ -1,7 +1,7 @@
 import { Button } from './../ui/button';
 import { Link } from 'react-router-dom';
 
-// components
+// Components
 import Nav from '../Nav/Nav';
 import MobileNav from '../MobileNav/MobileNav';
 
@@ -9,25 +9,29 @@ const Header = () => {
 
    const handleScrollToTop = () => {
       const backToTop = document.getElementById('welcome');
-      const headerHeight = document.querySelector("header").offsetHeight;
+      const headerHeight = document.querySelector('header').offsetHeight;
 
       if (backToTop) {
          window.scrollTo({
             top: backToTop.offsetTop - headerHeight,
-            behavior: "smooth",
+            behavior: 'smooth',
          });
       }
    };
 
    return (
-      <header className="bg-primary py-8 xl:py-12 text-white xl:sticky xl:top-0 xl:z-50">
+      <header className="bg-primary py-8 text-white xl:sticky xl:top-0 xl:z-50">
          <div className="container mx-auto flex justify-between items-center">
-            {/* logo */}
+
+            {/* Logo */}
             <Link to="/" onClick={handleScrollToTop}>
-               <h1>Tamara<span className="text-accent">.</span></h1>
+               <div className="inline-flex gap-4 items-center">
+                  <img src="./assets/logo-tamara.png" alt="Logo Portfolio Tamara Vandebroeck" className="w-10 h-10 sm:w-14 sm:h-14" />
+                  <h1>Tamara<span className="text-accent">.</span></h1>
+               </div>
             </Link>
 
-            {/* desktop nav & hire me button */}
+            {/* Desktop nav & contact btn */}
             <div className="hidden xl:flex items-center gap-8">
                <Nav />
                <Link to="/contact">
@@ -35,7 +39,7 @@ const Header = () => {
                </Link>
             </div>
 
-            {/* mobile nav */}
+            {/* Mobile nav */}
             <div className="xl:hidden">
                <MobileNav />
             </div>
