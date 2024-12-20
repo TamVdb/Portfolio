@@ -35,8 +35,8 @@ const Contact = () => {
       >
 
          <div className="container mx-auto">
-            <div className="flex flex-col justify-center py-8 xl:py-16">
-               <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-primary w-fit rounded py-1 px-3">Contact</h2>
+            <div className="flex flex-col justify-center py-8 xl:py-10">
+               <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">Contact</h2>
 
                <div className="flex flex-col xl:flex-row gap-[30px]">
                   {/* Form */}

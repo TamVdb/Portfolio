@@ -189,8 +189,8 @@ const Resume = () => {
       >
 
          <div className="container mx-auto">
-            <div className="flex flex-col justify-center py-8 xl:py-14">
-               <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-[#23262e] w-fit rounded py-1 px-3">À propos</h2>
+            <div className="flex flex-col justify-center py-8 xl:py-10">
+               <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">À propos</h2>
 
                <div className="flex flex-col items-center justify-center">
 
