@@ -7,16 +7,20 @@ import MobileNav from '../MobileNav/MobileNav';
 
 const Header = () => {
 
-   const handleScrollToTop = () => {
-      const backToTop = document.getElementById('welcome');
+   const handleScroll = (id) => {
+      const section = document.getElementById(id);
       const headerHeight = document.querySelector('header').offsetHeight;
 
-      if (backToTop) {
+      if (section) {
          window.scrollTo({
-            top: backToTop.offsetTop - headerHeight,
+            top: section.offsetTop - headerHeight,
             behavior: 'smooth',
          });
       }
+   };
+
+   const handleScrollToTop = () => {
+      handleScroll('welcome');
    };
 
    return (
@@ -34,9 +38,9 @@ const Header = () => {
             {/* Desktop nav & contact btn */}
             <div className="hidden xl:flex items-center gap-8">
                <Nav />
-               <Link to="/contact">
+               <button onClick={() => handleScroll('contact')}>
                   <Button>Contact</Button>
-               </Link>
+               </button>
             </div>
 
             {/* Mobile nav */}
