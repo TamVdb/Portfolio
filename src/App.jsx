@@ -12,19 +12,19 @@ function App() {
       <>
          <Header />
          <main>
-            <section id="welcome" className="xl:h-[calc(100vh-104px)]">
+            <section id="welcome" className="xl:h-[calc(100vh-130px)]">
                <Welcome />
             </section>
-            <section id="services" className="xl:h-[calc(100vh-104px)]">
+            <section id="services" className="xl:h-[calc(100vh-130px)]">
                <Services />
             </section>
-            <section id="resume" className="xl:h-[calc(100vh-104px)]">
+            <section id="resume" className="xl:h-[calc(100vh-130px)]">
                <Resume />
             </section>
-            <section id="work" className="xl:h-[calc(100vh-104px)]">
+            <section id="work" className="xl:h-[calc(100vh-130px)]">
                <Work />
             </section>
-            <section id="contact" className="xl:h-[calc(100vh-104px)]">
+            <section id="contact" className="xl:h-[calc(100vh-130px)]">
                <Contact />
             </section>
          </main>
