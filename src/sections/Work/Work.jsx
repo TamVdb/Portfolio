@@ -76,7 +76,7 @@ const Work = () => {
             <div className="flex flex-col justify-center py-8 xl:py-14">
                <h2 className="mx-auto lg:mx-0 mb-10 text-base bg-white/80 text-[#23262e] w-fit rounded py-1 px-3">Projets</h2>
 
-               <div classNme="flex flex-col justify-center">
+               <div className="flex flex-col justify-center">
                   <div className="flex flex-col xl:flex-row xl:gap-[30px]">
                      <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
                         <div className="flex flex-col gap-[30px] h-[50%]">
