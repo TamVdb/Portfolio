@@ -5,6 +5,7 @@ import Services from './sections/Services/Services';
 import Resume from './sections/Resume/Resume';
 import Work from './sections/Work/Work';
 import Contact from './sections/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                <Contact />
             </section>
          </main>
+         <Footer />
       </>
    );
 }
