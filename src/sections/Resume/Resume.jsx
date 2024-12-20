@@ -1,6 +1,13 @@
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaWordpress, FaSass, FaGitAlt, FaGithub } from "react-icons/fa";
 import { SiTailwindcss, SiBootstrap, SiRedux, SiGoogleanalytics, SiGoogletagmanager, SiAdobephotoshop, SiPhp, SiAdobeillustrator } from "react-icons/si";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
+
+
 // About data
 const about = {
    title: "À propos de moi",
@@ -171,162 +178,156 @@ const skills = {
    ],
 };
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
-
 const Resume = () => {
+
    return (
-      <div className="container mx-auto">
-         <div className="flex flex-col justify-center py-8 xl:py-14">
-            <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-[#23262e] w-fit rounded py-1 px-3">À propos</h2>
-            <motion.div
-               initial={{ opacity: 0 }}
-               animate={{
-                  opacity: 1,
-                  transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-               }}
-               className="flex flex-col items-center justify-center"
-            >
+      <motion.section
+         initial={{ opacity: 0, y: 100 }}  // Initial position off-screen (down)
+         whileInView={{ opacity: 1, y: 0 }}  // Animate to normal position
+         transition={{ duration: 0.5, ease: "easeOut" }}  // Smooth transition
+         viewport={{ once: true, amount: 0.5 }}  // Trigger animation when 50% of the section is in view
+      >
 
-               <Tabs
-                  defaultValue="experience"
-                  className="w-full flex flex-col xl:flex-row gap-16"
-               >
-                  <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-                     <TabsTrigger value="experience">Expériences</TabsTrigger>
-                     <TabsTrigger value="education">Formation</TabsTrigger>
-                     <TabsTrigger value="skills">Compétences</TabsTrigger>
-                     <TabsTrigger value="about">À propos de moi</TabsTrigger>
-                  </TabsList>
+         <div className="container mx-auto">
+            <div className="flex flex-col justify-center py-8 xl:py-14">
+               <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-[#23262e] w-fit rounded py-1 px-3">À propos</h2>
 
-                  {/* Content */}
-                  <div className="min-h-[70vh] w-full">
+               <div className="flex flex-col items-center justify-center">
 
-                     {/* Experience */}
-                     <TabsContent value="experience" className="w-full">
-                        <div className="flex flex-col gap-6">
+                  <Tabs defaultValue="skills" className="w-full flex flex-col xl:flex-row gap-16">
+                     <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+                        <TabsTrigger value="experience">Expériences</TabsTrigger>
+                        <TabsTrigger value="education">Formation</TabsTrigger>
+                        <TabsTrigger value="skills">Compétences</TabsTrigger>
+                        <TabsTrigger value="about">À propos de moi</TabsTrigger>
+                     </TabsList>
 
-                           {/* Title */}
-                           <h3 className="text-center xl:text-left">{experience.title}</h3>
+                     {/* Content */}
+                     <div className="min-h-[70vh] w-full">
 
-                           <ScrollArea className="h-[400px]">
-                              <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                 {experience.items.map((item, index) => {
+                        {/* Experience */}
+                        <TabsContent value="experience" className="w-full">
+                           <div className="flex flex-col gap-6">
+
+                              {/* Title */}
+                              <h3 className="text-center xl:text-left">{experience.title}</h3>
+
+                              <ScrollArea className="h-[400px]">
+                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    {experience.items.map((item, index) => {
+                                       return (
+                                          <li key={index}
+                                             className="bg-[#23262e] h-[184px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                                          >
+                                             <span className="text-accent">{item.duration}</span>
+                                             <p className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                                                {item.position}
+                                             </p>
+
+                                             {/* Dot & Company */}
+                                             <div className="flex items-center gap-3">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                                                <p className="text-white/70">{item.company}</p>
+                                             </div>
+                                          </li>
+                                       );
+                                    })}
+                                 </ul>
+                              </ScrollArea>
+                           </div>
+                        </TabsContent>
+
+                        {/* Education */}
+                        <TabsContent value="education" className="w-full">
+                           <div className="flex flex-col gap-6">
+
+                              {/* Title */}
+                              <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{education.title}</h3>
+
+                              <ScrollArea className="h-[400px]">
+                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    {education.items.map((item, index) => {
+                                       return (
+                                          <li key={index}
+                                             className="bg-[#23262e] h-[184px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                                          >
+                                             <span className="text-accent">{item.duration}</span>
+                                             <p className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                                                {item.degree}
+                                             </p>
+
+                                             {/* Dot & School */}
+                                             <div className="flex items-center gap-3">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                                                <p className="text-white/70">{item.institution}</p>
+                                             </div>
+                                          </li>
+                                       );
+                                    })}
+                                 </ul>
+                              </ScrollArea>
+                           </div>
+                        </TabsContent>
+
+                        {/* Skills */}
+                        <TabsContent value="skills" className="w-full h-full">
+                           <div className="flex flex-col gap-6">
+
+                              {/* Title */}
+                              <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{skills.title}</h3>
+
+                              <ul className="grid grid-cols-6 gap-4 md:gap-6">
+                                 {skills.skillList.map((skill, index) => {
                                     return (
-                                       <li key={index}
-                                          className="bg-[#23262e] h-[184px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                                       >
-                                          <span className="text-accent">{item.duration}</span>
-                                          <p className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                                             {item.position}
-                                          </p>
-
-                                          {/* Dot & Company */}
-                                          <div className="flex items-center gap-3">
-                                             <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                                             <p className="text-white/70">{item.company}</p>
-                                          </div>
+                                       <li key={index}>
+                                          <TooltipProvider delayDuration={100}>
+                                             <Tooltip>
+                                                <TooltipTrigger className="w-full h-[60px] md:h-[80px] lg:h-[100px] bg-[#23262e] rounded-xl flex justify-center items-center group">
+                                                   <div className="text-3xl md:text-4xl lg:text-5xl group-hover:text-accent transition-all duration-300">
+                                                      {skill.icon}
+                                                   </div>
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                   <p className="capitalize">{skill.name}</p>
+                                                </TooltipContent>
+                                             </Tooltip>
+                                          </TooltipProvider>
                                        </li>
                                     );
                                  })}
                               </ul>
-                           </ScrollArea>
-                        </div>
-                     </TabsContent>
+                           </div>
+                        </TabsContent>
 
-                     {/* Education */}
-                     <TabsContent value="education" className="w-full">
-                        <div className="flex flex-col gap-6">
+                        {/* About */}
+                        <TabsContent value="about" className="w-full text-center xl:text-left">
+                           <div className="flex flex-col gap-6">
 
-                           {/* Title */}
-                           <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{education.title}</h3>
-
-                           <ScrollArea className="h-[400px]">
-                              <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                 {education.items.map((item, index) => {
+                              {/* Title */}
+                              <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{about.title}</h3>
+                              <p className=" text-white/90 mx-auto xl:mx-0">
+                                 {about.description}
+                              </p>
+                              <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                                 {about.info.map((item, index) => {
                                     return (
                                        <li key={index}
-                                          className="bg-[#23262e] h-[184px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                                          className="flex items-center justify-center xl:justify-start gap-4"
                                        >
-                                          <span className="text-accent">{item.duration}</span>
-                                          <p className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                                             {item.degree}
-                                          </p>
-
-                                          {/* Dot & School */}
-                                          <div className="flex items-center gap-3">
-                                             <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                                             <p className="text-white/70">{item.institution}</p>
-                                          </div>
+                                          <span className="text-white/70">{item.fieldName}</span>
+                                          <span className="text-lg font-extralight">{item.fieldValue}</span>
                                        </li>
                                     );
                                  })}
                               </ul>
-                           </ScrollArea>
-                        </div>
-                     </TabsContent>
-
-                     {/* Skills */}
-                     <TabsContent value="skills" className="w-full h-full">
-                        <div className="flex flex-col gap-6">
-
-                           {/* Title */}
-                           <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{skills.title}</h3>
-
-                           <ul className="grid grid-cols-6 gap-4 md:gap-6">
-                              {skills.skillList.map((skill, index) => {
-                                 return (
-                                    <li key={index}>
-                                       <TooltipProvider delayDuration={100}>
-                                          <Tooltip>
-                                             <TooltipTrigger className="w-full h-[60px] md:h-[80px] lg:h-[100px] bg-[#23262e] rounded-xl flex justify-center items-center group">
-                                                <div className="text-3xl md:text-4xl lg:text-5xl group-hover:text-accent transition-all duration-300">
-                                                   {skill.icon}
-                                                </div>
-                                             </TooltipTrigger>
-                                             <TooltipContent>
-                                                <p className="capitalize">{skill.name}</p>
-                                             </TooltipContent>
-                                          </Tooltip>
-                                       </TooltipProvider>
-                                    </li>
-                                 );
-                              })}
-                           </ul>
-                        </div>
-                     </TabsContent>
-
-                     {/* About */}
-                     <TabsContent value="about" className="w-full text-center xl:text-left">
-                        <div className="flex flex-col gap-6">
-
-                           {/* Title */}
-                           <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{about.title}</h3>
-                           <p className=" text-white/90 mx-auto xl:mx-0">
-                              {about.description}
-                           </p>
-                           <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                              {about.info.map((item, index) => {
-                                 return (
-                                    <li key={index}
-                                       className="flex items-center justify-center xl:justify-start gap-4"
-                                    >
-                                       <span className="text-white/70">{item.fieldName}</span>
-                                       <span className="text-lg font-extralight">{item.fieldValue}</span>
-                                    </li>
-                                 );
-                              })}
-                           </ul>
-                        </div>
-                     </TabsContent>
-                  </div>
-               </Tabs>
-            </motion.div>
+                           </div>
+                        </TabsContent>
+                     </div>
+                  </Tabs>
+               </div>
+            </div>
          </div>
-      </div>
+      </motion.section>
    );
 };
 

@@ -25,19 +25,20 @@ const info = [
 import { motion } from "framer-motion";
 
 const Contact = () => {
-   return (
-      <div className="container mx-auto">
-         <div className="flex flex-col justify-center py-8 xl:py-16">
-            <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-primary w-fit rounded py-1 px-3">Contact</h2>
-            <motion.section
-               initial={{ opacity: 0 }}
-               animate={{
-                  opacity: 1,
-                  transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-               }}
-            >
-               <div className="flex flex-col xl:flex-row gap-[30px]">
 
+   return (
+      <motion.section
+         initial={{ opacity: 0, y: 100 }}  // Initial position off-screen (down)
+         whileInView={{ opacity: 1, y: 0 }}  // Animate to normal position
+         transition={{ duration: 0.5, ease: "easeOut" }}  // Smooth transition
+         viewport={{ once: true, amount: 0.5 }}  // Trigger animation when 50% of the section is in view
+      >
+
+         <div className="container mx-auto">
+            <div className="flex flex-col justify-center py-8 xl:py-16">
+               <h2 className="mx-auto lg:mx-0 mb-10 text-lg bg-white/80 text-primary w-fit rounded py-1 px-3">Contact</h2>
+
+               <div className="flex flex-col xl:flex-row gap-[30px]">
                   {/* Form */}
                   <div className="xl:w-[54%]">
                      <form className="flex flex-col gap-6 p-10 bg-[#23262e] rounded-xl">
@@ -88,9 +89,11 @@ const Contact = () => {
                      </ul>
                   </div>
                </div>
-            </motion.section>
+
+            </div>
          </div>
-      </div>
+
+      </motion.section >
    );
 };
 
