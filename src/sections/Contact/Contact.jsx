@@ -1,9 +1,15 @@
 import { useRef, useState } from 'react';
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from '@emailjs/browser';
+
+// Components
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+// Icons
 import { FaPhoneAlt, FaLinkedinIn, FaMapMarkerAlt } from "react-icons/fa";
 
 const info = [
@@ -35,27 +41,32 @@ const Contact = () => {
    const [formMessage, setFormMessage] = useState("");
    const [isError, setIsError] = useState(false);
 
-   const sendEmail = (e) => {
-      e.preventDefault();
+   const formSchema = z.object({
+      fistname: z.string().min(2, { message: "Le prénom est requis (min. 2 caractères)." }),
+      lastname: z.string().min(2, { message: "Le nom est requis (min. 2 caractères)." }),
+      email: z.string().email({ message: "Veuillez entrer une adresse email valide." }),
+      message: z.string().min(10, { message: "Votre message doit contenir au moins 10 caractères." }),
+   });
 
+   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(formSchema) });
+
+   const sendEmail = (data) => {
       emailjs
          .sendForm(
-            'service_u57cmhz',       // Remplace par ton Service ID
-            'template_m9294p3',      // Remplace par ton Template ID
+            'service_u57cmhz',       // Service ID
+            'template_m9294p3',      // Template ID
             form.current,
-            'lhYZnZhryRkLSBuVy'        // Remplace par ta clé publique
+            'lhYZnZhryRkLSBuVy'      // Public Key
          )
          .then(
             () => {
                setIsError(false);
                setFormMessage('Votre message a été envoyé avec succès !');
-               console.log('Message envoyé avec succès !');
                form.current.reset();
             },
             (error) => {
                setIsError(true);
                setFormMessage('Une erreur s’est produite. Veuillez réessayer.');
-               console.log('Erreur lors de l’envoi...', error);
             }
          );
    };
@@ -74,7 +85,7 @@ const Contact = () => {
 
                   {/* Form */}
                   <div className="xl:w-2/3">
-                     <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-6 p-4 sm:p-10 bg-[#23262e] rounded-xl">
+                     <form ref={form} onSubmit={handleSubmit(sendEmail)} className="flex flex-col gap-6 p-4 sm:p-10 bg-[#23262e] rounded-xl">
                         <h3 className="text-4xl text-accent">Contactez-moi</h3>
                         <p className="text-white/90">
                            Une idée, une question ou juste envie de dire bonjour ? Laissez-moi un petit mot, je serais ravie de vous lire.
@@ -82,23 +93,27 @@ const Contact = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                            <div className="relative">
-                              <Input type="text" name="firstname" placeholder="Prénom" className="peer" required />
-                              <span className="text-sm absolute right-2 top-1 text-red-500 hidden peer-placeholder-shown:block">*</span>
+                              <Input type="text" name="firstname" placeholder="Prénom" className="peer" {...register("fistname")} required />
+                              <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
+                              {errors.fistname && <span className="text-sm text-rose-400">{errors.fistname.message}</span>}
                            </div>
                            <div className="relative">
-                              <Input type="text" name="lastname" placeholder="Nom" className="peer" required />
-                              <span className="text-sm absolute right-2 top-1 text-red-500 hidden peer-placeholder-shown:block">*</span>
+                              <Input type="text" name="lastname" placeholder="Nom" className="peer" {...register("lastname")} required />
+                              <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
+                              {errors.lastname && <span className="text-sm text-rose-400">{errors.lastname.message}</span>}
                            </div>
                            <div className="relative">
-                              <Input type="email" name="email" placeholder="Email" className="peer" required />
-                              <span className="text-sm absolute right-2 top-1 text-red-500 hidden peer-placeholder-shown:block">*</span>
+                              <Input type="email" name="email" placeholder="Email" className="peer" {...register("email")} required />
+                              <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
+                              {errors.email && <span className="text-sm text-rose-400">{errors.email.message}</span>}
                            </div>
-                           <Input type="text" name="phone" placeholder="Téléphone" />
+                           <Input type="text" name="phone" placeholder="Téléphone" {...register("phone")} />
                         </div>
 
                         <div className="relative">
-                           <Textarea className="h-[200px] peer" name="message" placeholder="Message" required />
-                           <span className="text-sm absolute right-2 top-1 text-red-500 hidden peer-placeholder-shown:block">*</span>
+                           <Textarea className="h-[200px] peer" name="message" placeholder="Message" {...register("message")} required />
+                           <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
+                           {errors.message && <span className="text-sm text-rose-400">{errors.message.message}</span>}
                         </div>
 
                         <Button type="submit" size="md" className="max-w-40">Envoyer</Button>
