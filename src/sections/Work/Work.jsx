@@ -15,7 +15,7 @@ const projects = [
       category: "fullstack",
       title: "PlanMyTrip",
       description: "Application de planification de voyages développée en React. Elle permet de créer des activités par voyage et de les organiser par jour grâce au drag and drop.",
-      login: "User: User / Password: admin",
+      login: "Username: User / Password: password",
       stack: [{ name: "React" }, { name: "Redux" }, { name: "Tailwind.css" }, { name: "Node.js" }, { name: "MongoDB" }],
       image: "/assets/work/plan-my-trip.jpg",
       live: "https://plan-my-trip-seven.vercel.app/",
@@ -26,6 +26,7 @@ const projects = [
       category: "frontend",
       title: "Shake'n Taste",
       description: "Utilisation d'une API pour afficher des coktails. Mode sombre/clair en JavaScript qui correspond aux préférences utilisateur. Une page 'Lab' pour tester l'idée de créer son propre cocktail. Création du logo avec Illustrator et Photoshop.",
+      login: "",
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
       image: "/assets/work/shake-n-taste.jpg",
       live: "https://shake-n-taste.vercel.app/index.html",
@@ -36,6 +37,7 @@ const projects = [
       category: "frontend",
       title: "Mastermind",
       description: "Développement en JavaScript du célèbre jeu Mastermind.",
+      login: "",
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
       image: "/assets/work/mastermind.jpg",
       live: "https://mastermind-snowy.vercel.app/",
@@ -46,6 +48,7 @@ const projects = [
       category: "frontend",
       title: "GreenFood",
       description: "Première étape d'un projet de commande de box repas, présentant une page de plats et recettes construite avec HTML, CSS et JavaScript.",
+      login: "",
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
       image: "/assets/work/green-food.jpg",
       live: "https://green-food-gamma.vercel.app/",
@@ -98,13 +101,16 @@ const Work = () => {
                            {/* Project description */}
                            <p className="text-white/90">{project.description}</p>
 
+                           {/* Project credentials if any */}
+                           {project.login && <p className="text-primary font-normal w-fit bg-[#ecfdf4] py-1 px-4 rounded">{project.login}</p>}
+
                            {/* Stack */}
-                           <ul className="flex gap-4">
+                           <ul className="flex gap-3 flex-wrap">
                               {project.stack.map((item, index) => {
                                  return (
-                                    <li key={index} className="text-xl text-accent">
+                                    <li key={index} className="text-lg xl:text-xl text-accent">
                                        {item.name}
-                                       {/* remove the last comma */}
+                                       {/* Remove the last comma */}
                                        {index !== project.stack.length - 1 && ","}
                                     </li>
                                  );
