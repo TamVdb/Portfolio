@@ -38,9 +38,9 @@ const Header = () => {
             {/* Desktop nav & contact btn */}
             <div className="hidden xl:flex items-center gap-8">
                <Nav />
-               <button onClick={() => handleScroll('contact')}>
+               <div onClick={() => handleScroll('contact')}>
                   <Button>Contact</Button>
-               </button>
+               </div>
             </div>
 
             {/* Mobile nav */}
