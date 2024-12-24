@@ -26,14 +26,6 @@ const about = {
          fieldValue: "+9 ans",
       },
       {
-         fieldName: "Email",
-         fieldValue: "tamara@zestcitron.be",
-      },
-      {
-         fieldName: "Zone geographique",
-         fieldValue: "Bruxelles",
-      },
-      {
          fieldName: "Langues",
          fieldValue: "Français, Anglais",
       },
