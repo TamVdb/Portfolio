@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsGlobe } from "react-icons/bs";
 
 const socials = [
