@@ -53,10 +53,10 @@ const Contact = () => {
    const sendEmail = (data) => {
       emailjs
          .sendForm(
-            'service_u57cmhz',       // Service ID
-            'template_m9294p3',      // Template ID
+            import.meta.env.VITE_APP_EMAIL_SERVICE_ID,      // Service ID
+            import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID,     // Template ID
             form.current,
-            'lhYZnZhryRkLSBuVy'      // Public Key
+            import.meta.env.VITE_APP_EMAIL_PUBLIC_KEY       // Public Key
          )
          .then(
             () => {
