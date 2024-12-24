@@ -17,11 +17,11 @@ const Photo = () => {
                   opacity: 1,
                   transition: { delay: 1.5, duration: 0.4, ease: "easeInOut" },
                }}
-               className="w-[298px] h-[298px] xl:w-[506px] xl:h-[506px] mix-blend-lighten absolute"
+               className="w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] mix-blend-lighten absolute"
             >
                <img
                   // src="./assets/photo.png"
-                  src="https://fakeimg.pl/500x500/"
+                  src="./assets/tam.png"
                   alt=""
                   className="object-contain w-full h-full"
                />
@@ -29,9 +29,9 @@ const Photo = () => {
 
             {/* circle */}
             <motion.svg
-               className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
+               className="w-[300px] xl:w-[500px] h-[300px] xl:h-[500px]"
                fill="transparent"
-               viewBox="0 0 506 506"
+               viewBox="0 0 500 500"
                xmlns="http://www.w3.org/2000/svg"
             >
                <motion.circle
