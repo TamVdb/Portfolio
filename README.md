@@ -1,4 +1,5 @@
 # Portfolio
+<a href="https://www.tamaravdb.be" target="_blank" rel="noopener noreferrer">Visit my portfolio</a>
 
 &nbsp;
 ## 🛠️ Technologies used
@@ -9,12 +10,3 @@
 * Git
 * GitHub
 * VS Code
-
-&nbsp;
-## 👀 Visuels
-
-![Imgur]()
-![Imgur]()
-![Imgur]()
-![Imgur]()
-![Imgur]()
