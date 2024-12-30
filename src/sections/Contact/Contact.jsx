@@ -42,7 +42,7 @@ const Contact = () => {
    const [isError, setIsError] = useState(false);
 
    const formSchema = z.object({
-      fistname: z.string().min(2, { message: "Le prénom est requis (min. 2 caractères)." }),
+      firstname: z.string().min(2, { message: "Le prénom est requis (min. 2 caractères)." }),
       lastname: z.string().min(2, { message: "Le nom est requis (min. 2 caractères)." }),
       email: z.string().email({ message: "Veuillez entrer une adresse email valide." }),
       message: z.string().min(10, { message: "Votre message doit contenir au moins 10 caractères." }),
@@ -93,7 +93,7 @@ const Contact = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                            <div className="relative">
-                              <Input type="text" name="firstname" placeholder="Prénom" className="peer" {...register("fistname")} required />
+                              <Input type="text" name="firstname" placeholder="Prénom" className="peer" {...register("firstname")} required />
                               <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
                               {errors.fistname && <span className="text-sm text-rose-400">{errors.fistname.message}</span>}
                            </div>
