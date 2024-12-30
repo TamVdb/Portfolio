@@ -100,7 +100,7 @@ const Work = () => {
                               {project.num}
                            </div>
 
-                           <div className="flex items-baseline justify-between">
+                           <div className="flex items-baseline justify-between flex-wrap">
                               {/* Project name */}
                               <h3 className="group-hover:text-accent transition-all duration-500">{project.title}</h3>
                               {/* Project category */}
