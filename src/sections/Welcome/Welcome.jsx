@@ -30,7 +30,7 @@ const Welcome = () => {
                      variant="outline"
                      size="lg"
                      className="uppercase flex items-center gap-2">
-                     <a href="/public/assets/cv-tamara-vandebroeck.pdf" target="_blank">
+                     <a href="./assets/cv-tamara-vandebroeck.pdf" target="_blank">
                         <span>Mon CV</span>
                         <FiDownload className="text-xl" />
                      </a>
