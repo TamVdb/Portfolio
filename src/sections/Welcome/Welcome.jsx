@@ -26,11 +26,14 @@ const Welcome = () => {
                {/* btn and socials */}
                <div className="flex flex-col xl:flex-row items-center gap-8">
                   <Button
+                     asChild
                      variant="outline"
                      size="lg"
                      className="uppercase flex items-center gap-2">
-                     <span>Mon CV</span>
-                     <FiDownload className="text-xl" />
+                     <a href="/public/assets/cv-tamara-vandebroeck.pdf" target="_blank">
+                        <span>Mon CV</span>
+                        <FiDownload className="text-xl" />
+                     </a>
                   </Button>
                   <div className="mb-8 xl:mb-0">
                      <Social />
