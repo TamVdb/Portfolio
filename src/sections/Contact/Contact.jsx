@@ -18,18 +18,21 @@ const info = [
       title: "Téléphone",
       description: "+32 477 73 26 49",
       path: "tel:0032477732649",
+      name: "tel",
    },
    {
       icon: <FaLinkedinIn />,
       title: "Trouvez-moi sur",
       description: "LinkedIn",
       path: "https://www.linkedin.com/in/tamaravandebroeck/",
+      name: "LinkedIn",
    },
    {
       icon: <FaMapMarkerAlt />,
       title: "Localisation",
       description: "Bruxelles",
       path: "",
+      name: "",
    },
 ];
 
@@ -136,6 +139,7 @@ const Contact = () => {
                                  <a href={item.path} target="_blank">
                                     <div className="w-12 h-12 xl:w-14 xl:h-14 bg-[#23262e] text-accent rounded-md flex items-center justify-center">
                                        <div className="text-2xl">{item.icon}</div>
+                                       <span className="sr-only">{item.name}</span>
                                     </div>
                                  </a>
                               ) : (
