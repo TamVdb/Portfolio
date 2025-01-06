@@ -20,7 +20,7 @@ const projects = [
       image: "/assets/work/plan-my-trip.jpg",
       live: "https://plan-my-trip-seven.vercel.app/",
       namelive: "Live PlanMyTrip",
-      github: "https://github.com/TamVdb/itf3_Project_PlanMyTrip",
+      github: "https://github.com/TamVdb/PlanMyTrip",
       namegithub: "GitHub PlanMyTrip",
    },
    {
