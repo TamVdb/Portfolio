@@ -22,7 +22,7 @@ const Social = () => {
                   className="w-10 h-10 border border-accent rounded-full flex justify-center items-center text-accent text-xl hover:bg-accent hover:text-primary hover:transition-all duration-500 linkSocials"
                >
                   {item.icon}
-                  <span className="sr-only">[{item.name}]</span>
+                  <span className="sr-only">{item.name}</span>
                </a>
             );
          })}
