@@ -136,7 +136,7 @@ const Contact = () => {
                         {info.map((item, index) => (
                            <li key={index} className="flex items-center gap-6">
                               {item.path ? (
-                                 <a href={item.path} target="_blank">
+                                 <a href={item.path} target="_blank" className="linkSocials">
                                     <div className="w-12 h-12 xl:w-14 xl:h-14 bg-[#23262e] text-accent rounded-md flex items-center justify-center">
                                        <div className="text-2xl">{item.icon}</div>
                                        <span className="sr-only">{item.name}</span>
