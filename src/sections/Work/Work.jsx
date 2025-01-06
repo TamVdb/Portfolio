@@ -19,9 +19,7 @@ const projects = [
       stack: [{ name: "React" }, { name: "Redux" }, { name: "Tailwind.css" }, { name: "JavaScript" }, { name: "Node.js" }, { name: "MongoDB" }],
       image: "/assets/work/plan-my-trip.jpg",
       live: "https://plan-my-trip-seven.vercel.app/",
-      namelive: "Live PlanMyTrip",
       github: "https://github.com/TamVdb/PlanMyTrip",
-      namegithub: "GitHub PlanMyTrip",
    },
    {
       num: "02",
@@ -32,9 +30,7 @@ const projects = [
       stack: [{ name: "React" }, { name: "Tailwind.css" }, { name: "JavaScript" }, { name: "Unity" }, { name: "C#" }, { name: "Node.js" }, { name: "MongoDB" }],
       image: "/assets/work/carbon-quest.jpg",
       live: "https://carbon-quest-bay.vercel.app/",
-      namelive: "Live Carbon Quest",
       github: "https://github.com/TamVdb/CarbonQuest-online",
-      namegithub: "GitHub Carbon Quest",
    },
    {
       num: "03",
@@ -45,9 +41,7 @@ const projects = [
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
       image: "/assets/work/shake-n-taste.jpg",
       live: "https://shake-n-taste.vercel.app/index.html",
-      namelive: "Live Shake'n Taste",
       github: "https://github.com/TamVdb/itf3_Project_Shake_and_Taste",
-      namegithub: "GitHub Shake'n Taste",
    },
    {
       num: "04",
@@ -58,9 +52,8 @@ const projects = [
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
       image: "/assets/work/mastermind.jpg",
       live: "https://mastermind-snowy.vercel.app/",
-      namelive: "Live Mastermind",
       github: "https://github.com/TamVdb/itf3_JS_mastermind",
-      namegithub: "GitHub Mastermind",
+
    },
    {
       num: "05",
@@ -71,9 +64,7 @@ const projects = [
       stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
       image: "/assets/work/green-food.jpg",
       live: "https://green-food-gamma.vercel.app/",
-      namelive: "Live GreenFood",
       github: "https://github.com/TamVdb/itf3_Project_GreenFood",
-      namegithub: "GitHub GreenFood",
    },
 ];
 
@@ -144,33 +135,31 @@ const Work = () => {
                            {/* Buttons */}
                            <div className="flex items-center gap-4">
                               {/* Live project button */}
-                              <a href={project.live} target='_blank' className="linkProject">
+                              <a href={project.live} target='_blank' className="linkProjectLive">
                                  <TooltipProvider delayDuration={100}>
                                     <Tooltip>
                                        <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
                                           <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
                                        </TooltipTrigger>
                                        <TooltipContent>
-                                          <p>Projet live</p>
+                                          <p>Live {project.title}</p>
                                        </TooltipContent>
                                     </Tooltip>
                                  </TooltipProvider>
-                                 <span className="sr-only">{project.namelive}</span>
                               </a>
 
                               {/* Github project button */}
-                              <a href={project.github} target='_blank' className="linkProject">
+                              <a href={project.github} target='_blank' className="linkProjectGithub">
                                  <TooltipProvider delayDuration={100}>
                                     <Tooltip>
                                        <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
                                           <BsGithub className="text-white text-3xl group-hover:text-accent" />
                                        </TooltipTrigger>
                                        <TooltipContent>
-                                          <p>Repo Github</p>
+                                          <p>Repo Github {project.title}</p>
                                        </TooltipContent>
                                     </Tooltip>
                                  </TooltipProvider>
-                                 <span className="sr-only">{project.namegithub}</span>
                               </a>
                            </div>
                         </div>
