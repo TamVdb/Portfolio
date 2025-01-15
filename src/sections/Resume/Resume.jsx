@@ -188,14 +188,44 @@ const Resume = () => {
 
                   <Tabs defaultValue="skills" className="w-full flex flex-col xl:flex-row gap-16">
                      <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+                        <TabsTrigger value="skills">Compétences</TabsTrigger>
                         <TabsTrigger value="experience">Expériences</TabsTrigger>
                         <TabsTrigger value="education">Formation</TabsTrigger>
-                        <TabsTrigger value="skills">Compétences</TabsTrigger>
                         <TabsTrigger value="about">À propos de moi</TabsTrigger>
                      </TabsList>
 
                      {/* Content */}
                      <div className="min-h-[70vh] w-full">
+
+                        {/* Skills */}
+                        <TabsContent value="skills" className="w-full h-full">
+                           <div className="flex flex-col gap-6">
+
+                              {/* Title */}
+                              <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{skills.title}</h3>
+
+                              <ul className="grid grid-cols-5 sm:grid-cols-6 gap-3 md:gap-6">
+                                 {skills.skillList.map((skill, index) => {
+                                    return (
+                                       <li key={index}>
+                                          <TooltipProvider delayDuration={100}>
+                                             <Tooltip>
+                                                <TooltipTrigger className="h-[55px] w-[55px] sm:h-[80px] sm:w-[80px] lg:h-[100px] lg:w-[100px] bg-[#23262e] rounded-xl flex justify-center items-center group">
+                                                   <div className="text-3xl sm:text-4xl lg:text-5xl group-hover:text-accent transition-all duration-300">
+                                                      {skill.icon}
+                                                   </div>
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                   <p className="capitalize">{skill.name}</p>
+                                                </TooltipContent>
+                                             </Tooltip>
+                                          </TooltipProvider>
+                                       </li>
+                                    );
+                                 })}
+                              </ul>
+                           </div>
+                        </TabsContent>
 
                         {/* Experience */}
                         <TabsContent value="experience" className="w-full">
@@ -258,36 +288,6 @@ const Resume = () => {
                                     })}
                                  </ul>
                               </ScrollArea>
-                           </div>
-                        </TabsContent>
-
-                        {/* Skills */}
-                        <TabsContent value="skills" className="w-full h-full">
-                           <div className="flex flex-col gap-6">
-
-                              {/* Title */}
-                              <h3 className="text-4xl xl:text-5xl font-bold text-center xl:text-left">{skills.title}</h3>
-
-                              <ul className="grid grid-cols-5 sm:grid-cols-6 gap-3 md:gap-6">
-                                 {skills.skillList.map((skill, index) => {
-                                    return (
-                                       <li key={index}>
-                                          <TooltipProvider delayDuration={100}>
-                                             <Tooltip>
-                                                <TooltipTrigger className="h-[55px] w-[55px] sm:h-[80px] sm:w-[80px] lg:h-[100px] lg:w-[100px] bg-[#23262e] rounded-xl flex justify-center items-center group">
-                                                   <div className="text-3xl sm:text-4xl lg:text-5xl group-hover:text-accent transition-all duration-300">
-                                                      {skill.icon}
-                                                   </div>
-                                                </TooltipTrigger>
-                                                <TooltipContent>
-                                                   <p className="capitalize">{skill.name}</p>
-                                                </TooltipContent>
-                                             </Tooltip>
-                                          </TooltipProvider>
-                                       </li>
-                                    );
-                                 })}
-                              </ul>
                            </div>
                         </TabsContent>
 
