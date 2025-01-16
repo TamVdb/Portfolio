@@ -211,7 +211,7 @@ const Resume = () => {
                                           <TooltipProvider delayDuration={100}>
                                              <Tooltip>
                                                 <TooltipTrigger className="h-[55px] w-[55px] sm:h-[80px] sm:w-[80px] lg:h-[100px] lg:w-[100px] bg-[#23262e] rounded-xl flex justify-center items-center group" aria-label={skill.name}>
-                                                   <div className="text-3xl sm:text-4xl lg:text-5xl group-hover:text-accent transition-all duration-300">
+                                                   <div className="text-3xl sm:text-4xl lg:text-5xl group-hover:text-accent transition-all duration-300" aria-hidden="true">
                                                       {skill.icon}
                                                    </div>
                                                 </TooltipTrigger>
