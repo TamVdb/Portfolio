@@ -39,8 +39,7 @@ const Services = () => {
       >
 
          <div className="container mx-auto">
-            <div className="flex flex-col justify-center py-8 xl:py-10">
-               <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">Services</h2>
+            <div className="flex flex-col justify-center">
                <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent"
                   aria-label="Section des services">Services</h2>
 

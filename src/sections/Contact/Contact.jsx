@@ -82,7 +82,7 @@ const Contact = () => {
          viewport={{ once: true, amount: 0.5 }}
       >
          <div className="container mx-auto">
-            <div className="flex flex-col justify-center py-8 xl:py-10">
+            <div className="flex flex-col justify-center">
                <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">Contact</h2>
                <div className="flex flex-col xl:flex-row gap-[30px]">
 
@@ -98,7 +98,7 @@ const Contact = () => {
                            <div className="relative">
                               <Input type="text" name="firstname" placeholder="Prénom" className="peer" {...register("firstname")} required />
                               <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
-                              {errors.fistname && <span className="text-sm text-rose-400">{errors.fistname.message}</span>}
+                              {errors.firstname && <span className="text-sm text-rose-400">{errors.fistname.message}</span>}
                            </div>
                            <div className="relative">
                               <Input type="text" name="lastname" placeholder="Nom" className="peer" {...register("lastname")} required />
@@ -119,7 +119,7 @@ const Contact = () => {
                            {errors.message && <span className="text-sm text-rose-400">{errors.message.message}</span>}
                         </div>
 
-                        <Button type="submit" size="md" className="max-w-40">Envoyer</Button>
+                        <Button type="submit" size="md" className="max-w-40" aria-label="Envoyer le message">Envoyer</Button>
 
                         {formMessage && (
                            <p className={isError ? "text-red-500 mt-2" : "text-white mt-2"}>
@@ -136,7 +136,11 @@ const Contact = () => {
                         {info.map((item, index) => (
                            <li key={index} className="flex items-center gap-6">
                               {item.path ? (
-                                 <a href={item.path} target="_blank" className="linkSocials">
+                                 <a href={item.path}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={item.name}
+                                    className="linkSocials">
                                     <div className="w-12 h-12 xl:w-14 xl:h-14 bg-[#23262e] text-accent rounded-md flex items-center justify-center">
                                        <div className="text-2xl">{item.icon}</div>
                                        <span className="sr-only">{item.name}</span>

@@ -88,7 +88,7 @@ const Work = () => {
       >
 
          <div className="container mx-auto">
-            <div className="flex flex-col justify-center py-8 xl:py-10">
+            <div className="flex flex-col justify-center">
                <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">Projets</h2>
 
                <div className="flex flex-col justify-center">
@@ -135,7 +135,11 @@ const Work = () => {
                            {/* Buttons */}
                            <div className="flex items-center gap-4">
                               {/* Live project button */}
-                              <a href={project.live} target='_blank' className="linkProjectLive">
+                              <a href={project.live}
+                                 target='_blank'
+                                 className="linkProjectLive"
+                                 rel="noopener noreferrer"
+                                 aria-label={`Voir le projet ${project.title} live`}>
                                  <TooltipProvider delayDuration={100}>
                                     <Tooltip>
                                        <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
@@ -149,7 +153,11 @@ const Work = () => {
                               </a>
 
                               {/* Github project button */}
-                              <a href={project.github} target='_blank' className="linkProjectGithub">
+                              <a href={project.github}
+                                 target='_blank'
+                                 className="linkProjectGithub"
+                                 rel="noopener noreferrer"
+                                 aria-label={`Voir le code du projet ${project.title} sur Github`}>
                                  <TooltipProvider delayDuration={100}>
                                     <Tooltip>
                                        <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
