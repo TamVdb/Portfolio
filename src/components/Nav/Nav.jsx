@@ -54,6 +54,7 @@ const Nav = () => {
                className={`capitalize font-medium hover:text-accent transition-all 
                ${activeSection === link.id ? "text-accent border-b-2 border-accent" : ""}`}
                whileTap={{ scale: 0.9 }}
+               aria-label={`Naviguer vers ${link.name}`}
             >
                {link.name}
             </motion.button>

@@ -15,7 +15,8 @@ const Welcome = () => {
             {/* text */}
             <div className="text-center xl:text-left order-2 xl:order-none">
                <span className="text-xl">Front-End Developer</span>
-               <h2 className="main-title mb-6">
+               <h2 className="main-title mb-6"
+                  aria-label="Hello, je suis Tamara">
                   Hello, je suis <br /> <span className="text-accent">Tamara</span>
                </h2>
                <p className="max-w-[550px] mb-9 text-white/90">
@@ -30,9 +31,13 @@ const Welcome = () => {
                      variant="outline"
                      size="lg"
                      className="uppercase flex items-center gap-2">
-                     <a href="./assets/cv-tamara-vandebroeck.pdf" target="_blank">
+                     <a href="./assets/cv-tamara-vandebroeck.pdf"
+                        target="_blank"
+                        aria-label="Consulter mon CV"
+                        rel="noopener noreferrer"
+                        role="button">
                         <span>Mon CV</span>
-                        <FiDownload className="text-xl" />
+                        <FiDownload className="text-xl" aria-hidden="true" />
                      </a>
                   </Button>
                   <div className="mb-8 xl:mb-0">

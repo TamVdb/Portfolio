@@ -41,6 +41,8 @@ const Services = () => {
          <div className="container mx-auto">
             <div className="flex flex-col justify-center py-8 xl:py-10">
                <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">Services</h2>
+               <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent"
+                  aria-label="Section des services">Services</h2>
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-16">
                   {services.map((service, index) => {
@@ -53,7 +55,11 @@ const Services = () => {
                               <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                                  {service.num}
                               </div>
-                              <a href={service.href} target="_blank" className="w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45">
+                              <a href={service.href}
+                                 target="_blank"
+                                 className="w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                                 aria-label={`En savoir plus sur le service ${service.title}`}
+                                 rel="noopener noreferrer">
                                  <BsArrowDownRight className="text-primary text-3xl" />
                               </a>
                            </div>

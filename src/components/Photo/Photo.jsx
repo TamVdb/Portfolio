@@ -22,7 +22,7 @@ const Photo = () => {
                <img
                   // src="./assets/photo.png"
                   src="./assets/tam.png"
-                  alt=""
+                  alt="Photo de présentation de Tamara Vandebroeck"
                   className="object-contain w-full h-full"
                />
             </motion.div>

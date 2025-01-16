@@ -188,17 +188,17 @@ const Resume = () => {
 
                   <Tabs defaultValue="skills" className="w-full flex flex-col xl:flex-row gap-16">
                      <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-                        <TabsTrigger value="skills">Compétences</TabsTrigger>
-                        <TabsTrigger value="experience">Expériences</TabsTrigger>
-                        <TabsTrigger value="education">Formation</TabsTrigger>
-                        <TabsTrigger value="about">À propos de moi</TabsTrigger>
+                        <TabsTrigger value="skills" aria-label="Compétences" tabIndex="0" aria-selected="true">Compétences</TabsTrigger>
+                        <TabsTrigger value="experience" aria-label="Expériences professionnelles" tabIndex="0">Expériences</TabsTrigger>
+                        <TabsTrigger value="education" aria-label="Mes formations" tabIndex="0">Formation</TabsTrigger>
+                        <TabsTrigger value="about" aria-label="À propos de moi" tabIndex="0">À propos de moi</TabsTrigger>
                      </TabsList>
 
                      {/* Content */}
-                     <div className="min-h-[70vh] w-full">
+                     <div className="w-full">
 
                         {/* Skills */}
-                        <TabsContent value="skills" className="w-full h-full">
+                        <TabsContent value="skills" className="w-full h-full" aria-labelledby="skills" tabIndex={0} aria-hidden={false}>
                            <div className="flex flex-col gap-6">
 
                               {/* Title */}
@@ -228,7 +228,7 @@ const Resume = () => {
                         </TabsContent>
 
                         {/* Experience */}
-                        <TabsContent value="experience" className="w-full">
+                        <TabsContent value="experience" className="w-full" aria-labelledby="experience" tabIndex={0} aria-hidden={false}>
                            <div className="flex flex-col gap-6">
 
                               {/* Title */}
@@ -260,7 +260,7 @@ const Resume = () => {
                         </TabsContent>
 
                         {/* Education */}
-                        <TabsContent value="education" className="w-full">
+                        <TabsContent value="education" className="w-full" aria-labelledby="education" tabIndex={0} aria-hidden={false}>
                            <div className="flex flex-col gap-6">
 
                               {/* Title */}
@@ -292,7 +292,7 @@ const Resume = () => {
                         </TabsContent>
 
                         {/* About */}
-                        <TabsContent value="about" className="w-full text-center xl:text-left">
+                        <TabsContent value="about" className="w-full text-center xl:text-left" aria-labelledby="about" tabIndex={0} aria-hidden={false}>
                            <div className="flex flex-col gap-6">
 
                               {/* Title */}

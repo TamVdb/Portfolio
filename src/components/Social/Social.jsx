@@ -19,6 +19,7 @@ const Social = () => {
                   href={item.path}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={item.name}
                   className="w-10 h-10 border border-accent rounded-full flex justify-center items-center text-accent text-xl hover:bg-accent hover:text-primary hover:transition-all duration-500 linkSocials"
                >
                   {item.icon}
