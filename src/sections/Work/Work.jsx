@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,74 +9,25 @@ import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 
-const projects = [
-   {
-      num: "01",
-      category: "fullstack",
-      title: "PlanMyTrip",
-      description: "Application de planification de voyages développée en React. Elle permet de créer des activités par voyage et de les organiser par jour grâce au drag and drop.",
-      login: "Username: User / Password: password",
-      stack: [{ name: "React" }, { name: "Redux" }, { name: "Tailwind.css" }, { name: "JavaScript" }, { name: "Node.js" }, { name: "MongoDB" }],
-      image: "/assets/work/plan-my-trip.jpg",
-      live: "https://plan-my-trip-seven.vercel.app/",
-      github: "https://github.com/TamVdb/PlanMyTrip",
-   },
-   {
-      num: "02",
-      category: "fullstack",
-      title: "Carbon Quest",
-      description: "Carbon Quest est un projet collaboratif réalisé en trois jours lors d'un hackathon chez Interface3. Il s'agit d'un jeu éducatif de plates-formes qui vous invite à explorer les enjeux du Green IT.",
-      login: "",
-      stack: [{ name: "React" }, { name: "Tailwind.css" }, { name: "JavaScript" }, { name: "Unity" }, { name: "C#" }, { name: "Node.js" }, { name: "MongoDB" }],
-      image: "/assets/work/carbon-quest.jpg",
-      live: "https://carbon-quest-bay.vercel.app/",
-      github: "https://github.com/TamVdb/CarbonQuest-online",
-   },
-   {
-      num: "03",
-      category: "frontend",
-      title: "Shake'n Taste",
-      description: "Utilisation d'une API pour afficher des coktails. Mode sombre/clair en JavaScript qui correspond aux préférences utilisateur. Une page 'Lab' pour tester l'idée de créer son propre cocktail. Création du logo avec Illustrator et Photoshop.",
-      login: "",
-      stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-      image: "/assets/work/shake-n-taste.jpg",
-      live: "https://shake-n-taste.vercel.app/index.html",
-      github: "https://github.com/TamVdb/itf3_Project_Shake_and_Taste",
-   },
-   {
-      num: "04",
-      category: "frontend",
-      title: "Mastermind",
-      description: "Développement en JavaScript du célèbre jeu Mastermind.",
-      login: "",
-      stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-      image: "/assets/work/mastermind.jpg",
-      live: "https://mastermind-snowy.vercel.app/",
-      github: "https://github.com/TamVdb/itf3_JS_mastermind",
+import { useTranslation } from 'react-i18next';
 
-   },
-   {
-      num: "05",
-      category: "frontend",
-      title: "GreenFood",
-      description: "Première étape d'un projet de commande de box repas, présentant une page de plats et recettes construite avec HTML, CSS et JavaScript.",
-      login: "",
-      stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-      image: "/assets/work/green-food.jpg",
-      live: "https://green-food-gamma.vercel.app/",
-      github: "https://github.com/TamVdb/itf3_Project_GreenFood",
-   },
-];
 
 const Work = () => {
 
-   const [project, setProject] = useState(projects[0]);
+   const { t, i18n } = useTranslation();
+   const projects = t('projects.projects', { returnObjects: true });
+
+   const [currentIndex, setCurrentIndex] = useState(0);
+   const [currentProject, setCurrentProject] = useState(projects[0]);
+
+   // Met à jour le projet en fonction de l'index et de la langue
+   useEffect(() => {
+      setCurrentProject(projects[currentIndex]); // Met à jour les informations du projet
+   }, [i18n.language, currentIndex, projects]); // Dépendance à la langue, index et projets
 
    const handleSlideChange = (swiper) => {
-      // Get current slide index
-      const currentIndex = swiper.activeIndex;
-      // Update project state based on current slide index
-      setProject(projects[currentIndex]);
+      const index = swiper.activeIndex;
+      setCurrentIndex(index); // Met à jour l'index actuel du Swiper
    };
 
    return (
@@ -89,7 +40,7 @@ const Work = () => {
 
          <div className="container mx-auto">
             <div className="flex flex-col justify-center">
-               <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">Projets</h2>
+               <h2 className="mx-auto lg:mx-0 mb-6 text-lg text-accent">{t('projects.section')}</h2>
 
                <div className="flex flex-col justify-center">
                   <div className="flex flex-col xl:flex-row xl:gap-[30px]">
@@ -98,32 +49,32 @@ const Work = () => {
 
                            {/* Num */}
                            <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                              {project.num}
+                              {currentProject.num}
                            </div>
 
                            <div className="flex items-baseline justify-between flex-wrap">
                               {/* Project name */}
-                              <h3 className="group-hover:text-accent transition-all duration-500">{project.title}</h3>
+                              <h3 className="group-hover:text-accent transition-all duration-500">{currentProject.title}</h3>
                               {/* Project category */}
                               <p className="text-xl text-white">
-                                 Projet {project.category}
+                                 Projet {currentProject.category}
                               </p>
                            </div>
 
                            {/* Project description */}
-                           <p className="text-white/90">{project.description}</p>
+                           <p className="text-white/90">{currentProject.description}</p>
 
                            {/* Project credentials if any */}
-                           {project.login && <p className="text-primary font-normal w-fit bg-[#ecfdf4] py-1 px-4 rounded">{project.login}</p>}
+                           {currentProject.login && <p className="text-primary font-normal w-fit bg-[#ecfdf4] py-1 px-4 rounded">{currentProject.login}</p>}
 
                            {/* Stack */}
                            <ul className="flex gap-3 flex-wrap">
-                              {project.stack.map((item, index) => {
+                              {currentProject.stack.map((item, index) => {
                                  return (
                                     <li key={index} className="text-lg xl:text-xl text-accent">
-                                       {item.name}
+                                       {item}
                                        {/* Remove the last comma */}
-                                       {index !== project.stack.length - 1 && ","}
+                                       {index !== currentProject.stack.length - 1 && ","}
                                     </li>
                                  );
                               })}
@@ -135,36 +86,36 @@ const Work = () => {
                            {/* Buttons */}
                            <div className="flex items-center gap-4">
                               {/* Live project button */}
-                              <a href={project.live}
+                              <a href={currentProject.live}
                                  target='_blank'
                                  className="linkProjectLive"
                                  rel="noopener noreferrer"
-                                 aria-label={`Voir le projet ${project.title} live`}>
+                                 aria-label={`Voir le projet ${currentProject.title} live`}>
                                  <TooltipProvider delayDuration={100}>
                                     <Tooltip>
                                        <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
                                           <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
                                        </TooltipTrigger>
                                        <TooltipContent>
-                                          <p>Live {project.title}</p>
+                                          <p>Live {currentProject.title}</p>
                                        </TooltipContent>
                                     </Tooltip>
                                  </TooltipProvider>
                               </a>
 
                               {/* Github project button */}
-                              <a href={project.github}
+                              <a href={currentProject.github}
                                  target='_blank'
                                  className="linkProjectGithub"
                                  rel="noopener noreferrer"
-                                 aria-label={`Voir le code du projet ${project.title} sur Github`}>
+                                 aria-label={`Voir le code du projet ${currentProject.title} sur Github`}>
                                  <TooltipProvider delayDuration={100}>
                                     <Tooltip>
                                        <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
                                           <BsGithub className="text-white text-3xl group-hover:text-accent" />
                                        </TooltipTrigger>
                                        <TooltipContent>
-                                          <p>Repo Github {project.title}</p>
+                                          <p>Repo Github {currentProject.title}</p>
                                        </TooltipContent>
                                     </Tooltip>
                                  </TooltipProvider>

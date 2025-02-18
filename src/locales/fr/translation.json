@@ -1,0 +1,244 @@
+{
+   "nav": {
+      "welcome": "Bienvenue",
+      "services": "Services",
+      "about": "À propos",
+      "projects": "Projets"
+   },
+   "welcome": {
+      "hello": "Hello, je suis ",
+      "presentation": "J'aime coder des trucs pour le web ! Mon objectif est de créer des applications web attrayantes, inspirantes et optimisées au pixel près.",
+      "downloadResume": "Mon CV"
+   },
+   "services": [
+      {
+         "number": "01",
+         "title": "Web Development",
+         "description": "Développement d'applications web et de sites sur mesure.",
+         "link": "https://www.zestcitron.be/#services"
+      },
+      {
+         "number": "02",
+         "title": "UI/UX Design",
+         "description": "Conception orientée utilisateur et analyse des besoins.",
+         "link": "https://www.zestcitron.be/#services"
+      },
+      {
+         "number": "03",
+         "title": "Web Design",
+         "description": "Conception de sites optimisés performance et accessibilité.",
+         "link": "https://www.zestcitron.be/#services"
+      },
+      {
+         "number": "04",
+         "title": "SEO",
+         "description": "Chaque site est optimisé au référencement naturel.",
+         "link": "https://www.zestcitron.be/#services"
+      }
+   ],
+   "about": {
+      "section": "À propos",
+      "title": "À propos de moi",
+      "description": "+9 ans d'expérience dans la création de sites web, à la fois en entreprise et en tant que freelance. Passionnée par le design, je développe actuellement mes compétences en front-end avec une formation axée sur JavaScript et React.",
+      "info": [
+         {
+            "fieldName": "Nom",
+            "fieldValue": "Tamara Vandebroeck"
+         },
+         {
+            "fieldName": "Téléphone",
+            "fieldValue": "(+32) 477 73 26 49"
+         },
+         {
+            "fieldName": "Expérience",
+            "fieldValue": "+9 ans"
+         },
+         {
+            "fieldName": "Langues",
+            "fieldValue": "Français, Anglais"
+         }
+      ]
+   },
+   "experiences": {
+      "title": "Mes expériences",
+      "items": [
+         {
+            "company": "ZestCitron",
+            "position": "Freelance Front-End Developer",
+            "duration": "2020 - Présent"
+         },
+         {
+            "company": "Inbetween Agency",
+            "position": "Web Developer",
+            "duration": "2015 - 2020"
+         },
+         {
+            "company": "ORDIA (Ile de la Réunion)",
+            "position": "Conseillère insertion professionnelle",
+            "duration": "2010 - 2013"
+         },
+         {
+            "company": "Bx1, KNTV, Nixia, Uchrony",
+            "position": "Stages: journaliste, production, réseau, web developer",
+            "duration": ""
+         }
+      ]
+   },
+   "education": {
+      "title": "Mes formations",
+      "items": [
+         {
+            "institution": "Interface3",
+            "degree": "Front-End Web Developer",
+            "duration": "2024 - 2025"
+         },
+         {
+            "institution": "Institut Paul Hankar",
+            "degree": "BES Web Developer",
+            "duration": "2013 - 2015"
+         },
+         {
+            "institution": "CNED",
+            "degree": "1 an BTS Réseau informatique",
+            "duration": "2012"
+         },
+         {
+            "institution": "I.S.F.S.C.",
+            "degree": "Baccalauréat en Communication",
+            "duration": "2004 - 2007"
+         },
+         {
+            "institution": "Tishomingo High School",
+            "degree": "Année scolaire aux USA",
+            "duration": "2001 - 2002"
+         }
+      ]
+   },
+   "skills": {
+      "title": "Mes competences"
+   },
+   "info": {
+      "phone": {
+         "title": "Téléphone",
+         "description": "+32 477 73 26 49",
+         "path": "tel:0032477732649",
+         "name": "Téléphone"
+      },
+      "linkedin": {
+         "title": "Trouvez-moi sur",
+         "description": "LinkedIn",
+         "path": "https://www.linkedin.com/in/tamaravandebroeck/",
+         "name": "LinkedIn"
+      },
+      "location": {
+         "title": "Localisation",
+         "description": "Bruxelles",
+         "path": "",
+         "name": "Localisation"
+      }
+   },
+   "form": {
+      "title": "Contactez-moi",
+      "description": "Une idée, une question ou juste envie de dire bonjour ? Laissez-moi un petit mot, je serais ravie de vous lire.",
+      "firstname": "Prénom",
+      "lastname": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message",
+      "submit": "Envoyer",
+      "error": {
+         "firstname": "Le prénom est requis (min. 2 caractères).",
+         "lastname": "Le nom est requis (min. 2 caractères).",
+         "email": "Veuillez entrer une adresse email valide.",
+         "message": "Votre message doit contenir au moins 10 caractères."
+      },
+      "success": "Votre message a été envoyé avec succès !",
+      "errorSending": "Une erreur s’est produite. Veuillez réessayer."
+   },
+   "projects": {
+      "section": "Projets",
+      "projects": [
+         {
+            "num": "01",
+            "category": "fullstack",
+            "title": "PlanMyTrip",
+            "description": "Application de planification de voyages developpee en React. Elle permet de créer des activités par voyage et de les organiser par jour grace au drag and drop.",
+            "login": "Username: User / Password: password",
+            "stack": [
+               "React",
+               "Redux",
+               "Tailwind.css",
+               "JavaScript",
+               "Node.js",
+               "MongoDB"
+            ],
+            "image": "/assets/work/plan-my-trip.jpg",
+            "live": "https://plan-my-trip-seven.vercel.app/",
+            "github": "https://github.com/TamVdb/PlanMyTrip"
+         },
+         {
+            "num": "02",
+            "category": "fullstack",
+            "title": "Carbon Quest",
+            "description": "Carbon Quest est un projet collaboratif realise en 3 jours chez Interface3. Il s'agit d'un jeu educatif de plates-formes qui vous invite à explorer les enjeux du Green IT.",
+            "login": "",
+            "stack": [
+               "React",
+               "Redux",
+               "Tailwind.css",
+               "JavaScript",
+               "Node.js",
+               "MongoDB"
+            ],
+            "image": "/assets/work/carbon-quest.jpg",
+            "live": "https://carbon-quest-bay.vercel.app/",
+            "github": "https://github.com/TamVdb/CarbonQuest-online"
+         },
+         {
+            "num": "03",
+            "category": "frontend",
+            "title": "Shake'n Taste",
+            "description": "Shake'n Taste est un projet collaboratif realise en 3 jours chez Interface3. Il s'agit d'une application web qui vous permet de trouver des restaurants autour de vous.",
+            "login": "",
+            "stack": [
+               "HTML5",
+               "CSS3",
+               "JavaScript"
+            ],
+            "image": "/assets/work/shake-n-taste.jpg",
+            "live": "https://shake-and-taste.vercel.app/",
+            "github": "https://github.com/TamVdb/itf3_Project_Shake_and_Taste"
+         },
+         {
+            "num": "04",
+            "category": "frontend",
+            "title": "Mastermind",
+            "description": "Développement en JavaScript du célèbre jeu Mastermind.",
+            "login": "",
+            "stack": [
+               "HTML5",
+               "CSS3",
+               "JavaScript"
+            ],
+            "image": "/assets/work/mastermind.jpg",
+            "live": "https://mastermind-snowy.vercel.app/",
+            "github": "https://github.com/TamVdb/itf3_JS_mastermind"
+         },
+         {
+            "num": "05",
+            "category": "frontend",
+            "title": "GreenFood",
+            "description": "Première étape d'un projet de commande de box repas, presentant une page de plats et recettes construite avec HTML, CSS et JavaScript.",
+            "login": "",
+            "stack": [
+               "HTML5",
+               "CSS3",
+               "JavaScript"
+            ],
+            "image": "/assets/work/green-food.jpg",
+            "live": "https://green-food-gamma.vercel.app/",
+            "github": "https://github.com/TamVdb/itf3_Project_GreenFood"
+         }
+      ]
+   }
+}

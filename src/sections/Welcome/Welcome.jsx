@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import { useTranslation } from 'react-i18next';
 
 // Components
 import Social from "@/components/Social/Social";
 import Photo from "@/components/Photo/Photo";
 
 const Welcome = () => {
+
+   const { t } = useTranslation();
 
    return (
 
@@ -15,13 +18,11 @@ const Welcome = () => {
             {/* text */}
             <div className="text-center xl:text-left order-2 xl:order-none">
                <span className="text-xl">Front-End Developer</span>
-               <h2 className="main-title mb-6"
-                  aria-label="Hello, je suis Tamara">
-                  Hello, je suis <br /> <span className="text-accent">Tamara</span>
+               <h2 className="main-title mb-6">
+                  {t('welcome.hello')} <br /> <span className="text-accent">Tamara</span>
                </h2>
                <p className="max-w-[550px] mb-9 text-white/90">
-                  J'aime coder des trucs pour le web ! Mon objectif est de
-                  créer des applications web attrayantes, inspirantes et optimisées au pixel près.
+                  {t('welcome.presentation')}
                </p>
 
                {/* btn and socials */}
@@ -36,7 +37,7 @@ const Welcome = () => {
                         aria-label="Consulter mon CV"
                         rel="noopener noreferrer"
                         role="button">
-                        <span>Mon CV</span>
+                        <span>{t('welcome.downloadResume')}</span>
                         <FiDownload className="text-xl" aria-hidden="true" />
                      </a>
                   </Button>

@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const links = [
    { name: "welcome", id: "welcome" },
    { name: "services", id: "services" },
-   { name: "à propos", id: "resume" },
-   { name: "projets", id: "work" },
+   { name: "about", id: "resume" },
+   { name: "projects", id: "work" },
 ];
 
 const Nav = () => {
 
    const [activeSection, setActiveSection] = useState('');
+   const { t } = useTranslation();
 
    // Use the IntersectionObserver API to check if a section is in the viewport
    useEffect(() => {
@@ -56,7 +58,7 @@ const Nav = () => {
                whileTap={{ scale: 0.9 }}
                aria-label={`Naviguer vers ${link.name}`}
             >
-               {link.name}
+               {t(`nav.${link.name}`)}
             </motion.button>
          ))}
       </nav>

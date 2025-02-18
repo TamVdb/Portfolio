@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const links = [
    { name: "welcome", id: "welcome" },
@@ -74,6 +75,7 @@ const MobileNav = () => {
                      {link.name}
                   </motion.button>
                ))}
+               <LanguageSwitcher />
             </nav>
 
             {/* Bouton de fermeture */}

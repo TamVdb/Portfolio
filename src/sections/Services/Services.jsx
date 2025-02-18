@@ -1,34 +1,11 @@
 import { BsArrowDownRight } from "react-icons/bs";
 import { motion } from "framer-motion";
-
-const services = [
-   {
-      num: "01",
-      title: "Web Development",
-      description: "Développement d'applications web et de sites sur mesure.",
-      href: "https://www.zestcitron.be/#services",
-   },
-   {
-      num: "02",
-      title: "UI/UX Design",
-      description: "Analyse des besoins et conception centrée sur l’utilisateur final.",
-      href: "https://www.zestcitron.be/#services",
-   },
-   {
-      num: "03",
-      title: "Web Design",
-      description: "Conception de sites optimisés performance et accessibilité.",
-      href: "https://www.zestcitron.be/#services",
-   },
-   {
-      num: "04",
-      title: "SEO",
-      description: "Chaque site est optimisé au référencement naturel.",
-      href: "https://www.zestcitron.be/#services",
-   },
-];
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+
+   const { t } = useTranslation();
+   const services = t('services', { returnObjects: true });
 
    return (
       <motion.section
@@ -52,9 +29,9 @@ const Services = () => {
                            {/* top */}
                            <div className="w-full flex justify-between items-center">
                               <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
-                                 {service.num}
+                                 {service.number}
                               </div>
-                              <a href={service.href}
+                              <a href={service.link}
                                  target="_blank"
                                  className="w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
                                  aria-label={`En savoir plus sur le service ${service.title}`}

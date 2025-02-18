@@ -12,33 +12,37 @@ import { Textarea } from "@/components/ui/textarea";
 // Icons
 import { FaPhoneAlt, FaLinkedinIn, FaMapMarkerAlt } from "react-icons/fa";
 
-const info = [
-   {
-      icon: <FaPhoneAlt />,
-      title: "Téléphone",
-      description: "+32 477 73 26 49",
-      path: "tel:0032477732649",
-      name: "tel",
-   },
-   {
-      icon: <FaLinkedinIn />,
-      title: "Trouvez-moi sur",
-      description: "LinkedIn",
-      path: "https://www.linkedin.com/in/tamaravandebroeck/",
-      name: "LinkedIn",
-   },
-   {
-      icon: <FaMapMarkerAlt />,
-      title: "Localisation",
-      description: "Bruxelles",
-      path: "",
-      name: "",
-   },
-];
+import { useTranslation } from "react-i18next";
 
 import { motion } from "framer-motion";
 
 const Contact = () => {
+
+   const { t } = useTranslation();
+
+   const info = [
+      {
+         icon: <FaPhoneAlt />,
+         title: t('info.phone.title'),
+         description: t('info.phone.description'),
+         path: t('info.phone.path'),
+         name: t('info.phone.name'),
+      },
+      {
+         icon: <FaLinkedinIn />,
+         title: t('info.linkedin.title'),
+         description: t('info.linkedin.description'),
+         path: t('info.linkedin.path'),
+         name: t('info.linkedin.name'),
+      },
+      {
+         icon: <FaMapMarkerAlt />,
+         title: t('info.location.title'),
+         description: t('info.location.description'),
+         path: t('info.location.path'),
+         name: t('info.location.name'),
+      },
+   ];
 
    const form = useRef();
    const [formMessage, setFormMessage] = useState("");
@@ -89,19 +93,19 @@ const Contact = () => {
                   {/* Form */}
                   <div className="xl:w-2/3">
                      <form ref={form} onSubmit={handleSubmit(sendEmail)} className="flex flex-col gap-6 p-4 sm:p-10 bg-[#23262e] rounded-xl">
-                        <h3 className="text-4xl text-accent">Contactez-moi</h3>
+                        <h3 className="text-4xl text-accent">{t('form.title')}</h3>
                         <p className="text-white/90">
-                           Une idée, une question ou juste envie de dire bonjour ? Laissez-moi un petit mot, je serais ravie de vous lire.
+                           {t('form.description')}
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                            <div className="relative">
-                              <Input type="text" name="firstname" placeholder="Prénom" className="peer" {...register("firstname")} required />
+                              <Input type="text" name="firstname" placeholder={t('form.firstname')} className="peer" {...register("firstname")} required />
                               <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
                               {errors.firstname && <span className="text-sm text-rose-400">{errors.fistname.message}</span>}
                            </div>
                            <div className="relative">
-                              <Input type="text" name="lastname" placeholder="Nom" className="peer" {...register("lastname")} required />
+                              <Input type="text" name="lastname" placeholder={t('form.lastname')} className="peer" {...register("lastname")} required />
                               <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
                               {errors.lastname && <span className="text-sm text-rose-400">{errors.lastname.message}</span>}
                            </div>
@@ -110,7 +114,7 @@ const Contact = () => {
                               <span className="text-sm absolute right-2 top-1 text-rose-400 hidden peer-placeholder-shown:block">*</span>
                               {errors.email && <span className="text-sm text-rose-400">{errors.email.message}</span>}
                            </div>
-                           <Input type="text" name="phone" placeholder="Téléphone" {...register("phone")} />
+                           <Input type="text" name="phone" placeholder={t('form.phone')} {...register("phone")} />
                         </div>
 
                         <div className="relative">
@@ -119,7 +123,7 @@ const Contact = () => {
                            {errors.message && <span className="text-sm text-rose-400">{errors.message.message}</span>}
                         </div>
 
-                        <Button type="submit" size="md" className="max-w-40" aria-label="Envoyer le message">Envoyer</Button>
+                        <Button type="submit" size="md" className="max-w-40" aria-label="Envoyer le message">{t('form.submit')}</Button>
 
                         {formMessage && (
                            <p className={isError ? "text-red-500 mt-2" : "text-white mt-2"}>

@@ -5,6 +5,7 @@ import Resume from './sections/Resume/Resume';
 import Work from './sections/Work/Work';
 import Contact from './sections/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import './utils/i18n';
 
 function App() {
 

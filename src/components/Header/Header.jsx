@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // Components
 import Nav from '../Nav/Nav';
 import MobileNav from '../MobileNav/MobileNav';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const Header = () => {
 
@@ -41,6 +42,7 @@ const Header = () => {
                <div onClick={() => handleScroll('contact')}>
                   <Button>Contact</Button>
                </div>
+               <LanguageSwitcher />
             </div>
 
             {/* Mobile nav */}
