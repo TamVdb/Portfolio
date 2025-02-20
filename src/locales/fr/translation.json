@@ -211,9 +211,24 @@
          },
          {
             "num": "04",
-            "category": "frontend",
+            "category": "jeu",
+            "title": "Tic Tac Toe",
+            "description": "Développement en JavaScript du jeu OXO.",
+            "login": "",
+            "stack": [
+               "HTML5",
+               "CSS3",
+               "JavaScript"
+            ],
+            "image": "/assets/work/tic-tac-toe.jpg",
+            "live": "https://tic-tac-toe-beryl-alpha.vercel.app/",
+            "github": "https://github.com/TamVdb/TicTacToe"
+         },
+         {
+            "num": "05",
+            "category": "jeu",
             "title": "Mastermind",
-            "description": "Développement en JavaScript du célèbre jeu Mastermind.",
+            "description": "Développement en JavaScript du jeu Mastermind.",
             "login": "",
             "stack": [
                "HTML5",
@@ -225,7 +240,7 @@
             "github": "https://github.com/TamVdb/itf3_JS_mastermind"
          },
          {
-            "num": "05",
+            "num": "06",
             "category": "frontend",
             "title": "GreenFood",
             "description": "Première étape d'un projet de commande de box repas, presentant une page de plats et recettes construite avec HTML, CSS et JavaScript.",
