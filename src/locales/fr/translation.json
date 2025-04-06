@@ -213,7 +213,7 @@
             "num": "04",
             "category": "jeu",
             "title": "Tic Tac Toe",
-            "description": "Développement en JavaScript du jeu OXO.",
+            "description": "OXO développé en JavaScript, avec logique de jeu et détection automatique des gagnants.",
             "login": "",
             "stack": [
                "HTML5",
@@ -226,9 +226,26 @@
          },
          {
             "num": "05",
+            "category": "fullstack",
+            "title": "Qwizzy",
+            "description": "Qwizzy est une plateforme de quiz qui associe WordPress (backend) et React (frontend) via la REST API. Les utilisateurs peuvent jouer, créer des quiz et suivre leurs scores.",
+            "login": "",
+            "stack": [
+               "HTML5",
+               "CSS3",
+               "React",
+               "JavaScript",
+               "WordPress"
+            ],
+            "image": "/assets/work/qwizzy.jpg",
+            "live": "https://tamara.interface3.be/",
+            "github": "https://github.com/TamVdb/itf3_Project_Qwizzy"
+         },
+         {
+            "num": "06",
             "category": "jeu",
             "title": "Mastermind",
-            "description": "Développement en JavaScript du jeu Mastermind.",
+            "description": "Développement du jeu Mastermind en JavaScript avec logique de validation et interface interactive",
             "login": "",
             "stack": [
                "HTML5",
@@ -240,7 +257,7 @@
             "github": "https://github.com/TamVdb/itf3_JS_mastermind"
          },
          {
-            "num": "06",
+            "num": "07",
             "category": "frontend",
             "title": "GreenFood",
             "description": "Première étape d'un projet de commande de box repas, presentant une page de plats et recettes construite avec HTML, CSS et JavaScript.",

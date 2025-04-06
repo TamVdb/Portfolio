@@ -213,7 +213,7 @@
             "num": "04",
             "category": "game",
             "title": "Tic Tac Toe",
-            "description": "JavaScript development of Tic Tac Toe game.",
+            "description": "Developed a Tic Tac Toe game in JavaScript featuring game state management and win condition detection.",
             "login": "",
             "stack": [
                "HTML5",
@@ -226,9 +226,26 @@
          },
          {
             "num": "05",
+            "category": "fullstack",
+            "title": "Qwizzy",
+            "description": "Qwizzy is an online quiz platform built with WordPress (as a headless CMS) and React, communicating through the REST API.",
+            "login": "",
+            "stack": [
+               "HTML5",
+               "CSS3",
+               "React",
+               "JavaScript",
+               "WordPress"
+            ],
+            "image": "/assets/work/qwizzy.jpg",
+            "live": "https://tamara.interface3.be/",
+            "github": "https://github.com/TamVdb/itf3_Project_Qwizzy"
+         },
+         {
+            "num": "06",
             "category": "frontend",
             "title": "Mastermind",
-            "description": "JavaScript development of Mastermind game.",
+            "description": "Built the Mastermind game in JavaScript with logic for validating guesses and an interactive interface.",
             "login": "",
             "stack": [
                "HTML5",
@@ -240,7 +257,7 @@
             "github": "https://github.com/TamVdb/itf3_JS_mastermind"
          },
          {
-            "num": "06",
+            "num": "07",
             "category": "frontend",
             "title": "GreenFood",
             "description": "First step in a project to order boxed meals, presenting a page of dishes and recipes built with HTML, CSS and JavaScript.",
