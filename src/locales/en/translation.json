@@ -198,7 +198,7 @@
             "num": "03",
             "category": "frontend",
             "title": "Shake'n Taste",
-            "description": "Shake'n Taste is a collaborative project realized in 3 days at Interface3. It's a web application that lets you find restaurants around you.",
+            "description": "Shake & Taste is a web app that lets users search for cocktails using TheCocktailDB API. It features a light/dark mode and an interactive lab to create custom mixes.",
             "login": "",
             "stack": [
                "HTML5",
