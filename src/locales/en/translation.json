@@ -7,7 +7,7 @@
    },
    "welcome": {
       "hello": "Hello, I'm ",
-      "presentation": "I love coding stuff for the web! My goal is to craft visually appealing, pixel-perfect UIs and user-friendly web applications that solve problems and inspire.",
+      "presentation": "I love coding stuff for the web! My goal is to craft visually appealing, pixel-perfect UIs, accessible web applications that engage and inspire.",
       "downloadResume": "My resume"
    },
    "services": [
@@ -39,7 +39,7 @@
    "about": {
       "section": "About",
       "title": "About me",
-      "description": "9+ years of experience in designing, building, and maintaining responsive websites, both in a company and as a freelancer. Passionate about design and optimization, I’m currently completing a front-end development program focused on JavaScript and React.",
+      "description": "9+ years of experience in designing, building, and maintaining responsive websites, both in a company and as a freelancer. I recently completed a one-year training program focused on JavaScript and React to deepen my front-end development skills.",
       "info": [
          {
             "fieldName": "Name",
@@ -63,12 +63,17 @@
       "title": "My experiences",
       "items": [
          {
-            "company": "ZestCitron",
+            "company": "Spade (Brussels)",
+            "position": "Internship Front-End Developer",
+            "duration": "2025 (2 months)"
+         },
+         {
+            "company": "ZestCitron (Brussels)",
             "position": "Freelance Front-End Developer",
             "duration": "2020 - Present"
          },
          {
-            "company": "Inbetween Agency",
+            "company": "Inbetween Agency (Brussels)",
             "position": "Web Developer",
             "duration": "2015 - 2020"
          },

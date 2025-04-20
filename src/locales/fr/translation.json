@@ -7,7 +7,7 @@
    },
    "welcome": {
       "hello": "Hello, je suis ",
-      "presentation": "J'aime coder des trucs pour le web ! Mon objectif est de créer des applications web attrayantes, inspirantes et optimisées au pixel près.",
+      "presentation": "J'aime coder des trucs pour le web ! Mon objectif est de concevoir des applications web attrayantes, accessibles, optimisées au pixel près et qui engagent.",
       "downloadResume": "Mon CV"
    },
    "services": [
@@ -39,7 +39,7 @@
    "about": {
       "section": "À propos",
       "title": "À propos de moi",
-      "description": "+9 ans d'expérience dans la création de sites web, à la fois en entreprise et en tant que freelance. Passionnée par le design, je développe actuellement mes compétences en front-end avec une formation axée sur JavaScript et React.",
+      "description": "+9 ans d'expérience dans la création de sites web, à la fois en entreprise et en tant que freelance. J’ai récemment finalisé une formation d’un an axée sur JavaScript et React pour perfectionner mes compétences en front-end.",
       "info": [
          {
             "fieldName": "Nom",
@@ -63,12 +63,17 @@
       "title": "Mes expériences",
       "items": [
          {
-            "company": "ZestCitron",
+            "company": "Spade (Bruxelles)",
+            "position": "Stage Front-End Developer",
+            "duration": "2025 (2 mois)"
+         },
+         {
+            "company": "ZestCitron (Bruxelles)",
             "position": "Freelance Front-End Developer",
             "duration": "2020 - Présent"
          },
          {
-            "company": "Inbetween Agency",
+            "company": "Inbetween Agency (Bruxelles)",
             "position": "Web Developer",
             "duration": "2015 - 2020"
          },
@@ -115,7 +120,7 @@
       ]
    },
    "skills": {
-      "title": "Mes competences"
+      "title": "Mes compétences"
    },
    "info": {
       "phone": {
@@ -162,7 +167,7 @@
             "num": "01",
             "category": "fullstack",
             "title": "PlanMyTrip",
-            "description": "Application de planification de voyages developpee en React. Elle permet de créer des activités par voyage et de les organiser par jour grace au drag and drop.",
+            "description": "Application de planification de voyages développée en React. Elle permet de créer des activités par voyage et de les organiser par jour grâce au drag and drop.",
             "login": "Username: User / Password: password",
             "stack": [
                "React",
@@ -180,7 +185,7 @@
             "num": "02",
             "category": "fullstack",
             "title": "Carbon Quest",
-            "description": "Carbon Quest est un projet collaboratif realise en 3 jours chez Interface3. Il s'agit d'un jeu educatif de plates-formes qui vous invite à explorer les enjeux du Green IT.",
+            "description": "Carbon Quest est un projet collaboratif réalisé en 3 jours. Il s'agit d'un jeu éducatif de plates-formes qui vous invite à explorer les enjeux du Green IT.",
             "login": "",
             "stack": [
                "React",
