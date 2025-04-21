@@ -8,7 +8,8 @@
    "welcome": {
       "hello": "Hello, je suis ",
       "presentation": "J'aime coder des trucs pour le web ! Mon objectif est de concevoir des applications web attrayantes, accessibles, optimisées au pixel près et qui engagent.",
-      "downloadResume": "Mon CV"
+      "downloadResume": "Mon CV",
+      "resumeFile": "./assets/cv-tamara-vandebroeck-fr.pdf"
    },
    "services": [
       {

@@ -8,7 +8,8 @@
    "welcome": {
       "hello": "Hello, I'm ",
       "presentation": "I love coding stuff for the web! My goal is to craft visually appealing, pixel-perfect UIs, accessible web applications that engage and inspire.",
-      "downloadResume": "My resume"
+      "downloadResume": "My resume",
+      "resumeFile": "./assets/cv-tamara-vandebroeck-en.pdf"
    },
    "services": [
       {
